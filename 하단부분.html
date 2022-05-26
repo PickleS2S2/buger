@@ -6,38 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>버거킹</title>
     <style>
-        .container {
-            display: flex;
-            justify-content: flex-start;
-            z-index: 1;
-            position: absolute;
-            top: 10px;
-
+        *{
+            margin: 0;
+            padding: 0;
         }
+        .container {
+        width: 1300px;
+        margin: 0 auto;
+        position: absolute;
+        top: 60px;
+        z-index: 1;
+        color: white;
+        display: grid;
+        grid-template-columns: 140px 2fr 100px 2fr;
+        column-gap: 10px;
+        grid-template-areas: 
+        ". aside . content ."
+
+    }
+        [class*=cell] {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+        .cell-aside { grid-area: aside;}
+        .cell-content { grid-area: content;}
         .fire {
             z-index: -1;
             filter: brightness(50%);
+        }
+        .call {
+            z-index: 1;
+            font-size: 50px;
+        }
+        .call_i {
+            position: absolute;
+            top: 26px;
+            left: 750px;
         }
     </style>
 </head>
 <body>
     <footer>
         <img class="fire" src="fire.jpg" width="1300" height="250">
-        <span class="container">
-            <tr>
-                <td>
-                    <h1>집에서 만나는 버거킹</h1>
-                </td>
-        </span>
-        <span>
-                <td>
-                    <h3>딜리버리 전화주문 안내 10:00-22:00 / 연중무휴 (매장별로 상이할 수 있습니다.)</h3>
-                </td>
-        </span>     
-                <td>
-                    <h1>1599-0505</h1>
-                </td> 
-            </tr>  
+        <div class="container">
+            <div class="cell-aside">
+                <h1>집에서 만나는 버거킹</h1> &nbsp;
+                <h3>딜리버리 전화주문 안내 10:00-22:00 / 연중무휴 (매장별로 상이할 수 있습니다.)</h3>
+            </div>   
+            <div class="cell-content">
+                <h1 class="call"><img class="call_i" src="call.png" width="40" height="45">1599-0505</h1>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
